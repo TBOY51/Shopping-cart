@@ -1,0 +1,146 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body>
+    <nav class="bg-white fixed w-[100%] top-0 shadow-md p-4 flex justify-between items-center ">
+      <h1 class="text-2xl font-bold">My Store</h1>
+      <button id="cartButton" class="text-xl focus:outline-none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          class="w-8 h-8"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4m-2.8 4h18l-3 6H7L5 9m5-5h4m-4 0v1a1 1 0 102 0V4m0 0h4m-4 0a1 1 0 01-1 1H7a1 1 0 01-1-1m1 1h6a1 1 0 001-1V3a1 1 0 00-1-1h-4a1 1 0 00-1 1v1z"
+          />
+        </svg>
+        <p id="cartn"  class="text-red-700">0</p>
+      </button>
+    </nav>
+    <!-- Off-Canvas Cart -->
+    <div
+      id="cartOffcanvas"
+      class="fixed inset-y-0 right-0 transform translate-x-full bg-white w-80 shadow-lg z-50 transition-transform duration-300 ease-in-out"
+    >
+      <div class="p-4">
+        <h2 class="text-xl font-bold mb-4">Shopping Cart</h2>
+        <div id="cartItems" class="space-y-4">
+          <!-- Cart items will go here -->
+          <p class="text-gray-600">Your cart is empty.</p>
+        </div>
+        <button
+          id="closeCartButton"
+          class="mt-6 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 w-full"
+        >
+          Close Cart
+        </button>
+      </div>
+    </div>
+    <div class="eight-section mx-[4%] lg:mx-[10%] mt-36">
+      <div class="text-center mb-10">
+        <p class="text-4xl font-bold">New Andriod phones dropped.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div
+          class="h-[401] lg:h-[388] bg-[#e8f0fe] grid justify-center rounded-3xl"
+        >
+          <div class="w-[326] h-[128] mt-9">
+            <img src="./public/img/flip.webp" alt="" />
+          </div>
+          <div class="text-center space-y-4 mt-14">
+            <p class="text-2xl font-bold">Galaxy Z Flip6</p>
+            <p class="font-semibold">From $1,099.99</p>
+            <button onclick="zflip()" class="w-[147] h-[48] border-2 border-black rounded-3xl">
+              Buy now +
+            </button>
+          </div>
+        </div>
+        <div
+          class="h-[401] lg:h-[388] bg-[#f1f3f4] grid justify-center rounded-3xl"
+        >
+          <div class="w-[326] h-[128] mt-9">
+            <img src="./public/img/fold.webp" alt="" />
+          </div>
+          <div class="text-center space-y-4 mt-14">
+            <p class="text-2xl font-bold">Galaxy Z Fold6</p>
+            <p class="font-semibold">From $1,899.99</p>
+            <button class="w-[147] h-[48] border-2 border-black rounded-3xl">
+              Buy now +
+            </button>
+          </div>
+        </div>
+        <div
+          class="h-[401] lg:h-[388] bg-[#fef8e9] grid justify-center rounded-3xl"
+        >
+          <div class="w-[326] h-[128] mt-9">
+            <img src="./public/img/ultra.webp" alt="" />
+          </div>
+          <div class="text-center space-y-4 mt-14">
+            <p class="text-2xl font-bold">Galaxy S24 Ultra</p>
+            <p class="font-semibold">From $1,299.99</p>
+            <button class="w-[147] h-[48] border-2 border-black rounded-3xl">
+              Buy now +
+            </button>
+          </div>
+        </div>
+        <div
+          class="h-[401] lg:h-[388] bg-[#e2f2ff] grid justify-center rounded-3xl"
+        >
+          <div class="w-[326] h-[128] mt-9">
+            <img src="./public/img/p8pro.webp" alt="" />
+          </div>
+          <div class="text-center space-y-4 mt-14">
+            <p class="text-2xl font-bold">Pixel 8 Pro</p>
+            <p class="font-semibold">From $999.00</p>
+            <button class="w-[147] h-[48] border-2 border-black rounded-3xl">
+              Buy now +
+            </button>
+          </div>
+        </div>
+        <div
+          class="h-[401] lg:h-[388] bg-[#fef8e9] grid justify-center rounded-3xl"
+        >
+          <div class="w-[326] h-[128] mt-9">
+            <img src="./public/img/pfold.webp" alt="" />
+          </div>
+          <div class="text-center space-y-4 mt-14">
+            <p class="text-2xl font-bold">Pixel Fold</p>
+            <p class="font-semibold">From $1,799.00</p>
+            <button class="w-[147] h-[48] border-2 border-black rounded-3xl">
+              Buy now +
+            </button>
+          </div>
+        </div>
+        <div
+          class="h-[401] lg:h-[388] bg-[#ebf9e5] grid justify-center rounded-3xl"
+        >
+          <div class="w-[326] h-[128] mt-9">
+            <img src="./public/img/p8a.webp" alt="" />
+          </div>
+          <div class="text-center space-y-4 mt-14">
+            <p class="text-2xl font-bold">Pixel 8a</p>
+            <p class="font-semibold">From $499.00</p>
+            <button class="w-[147] h-[48] border-2 border-black rounded-3xl">
+              Buy now +
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="text-center my-10">
+        <button class="bg-black text-white h-[48] w-[193] rounded-3xl">
+          See all phones
+        </button>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
